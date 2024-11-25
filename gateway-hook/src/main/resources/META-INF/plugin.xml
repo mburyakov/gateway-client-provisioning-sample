@@ -1,0 +1,17 @@
+<idea-plugin>
+    <id>org.jetbrains.gateway-client-provisioning-sample.gateway-hook</id>
+
+    <name>Gateway Hook Sample</name>
+
+    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">JetBrains</vendor>
+
+    <description>
+        A simple plugin which install a payload plugin to the RD clients launched by JetBrains Gateway.
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <remoteDev.configureClientHook implementation="com.jetbrains.sample.ConfigurePluginsHook"/>
+    </extensions>
+</idea-plugin>
