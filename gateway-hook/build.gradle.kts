@@ -1,5 +1,4 @@
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.utils.asPath
 
 plugins {
     id("java")
@@ -25,12 +24,13 @@ intellijPlatform {
         ideaVersion {
             sinceBuild = "243.21565"
         }
+        version = project.version.toString()
     }
     buildSearchableOptions = false
     instrumentCode = false
 }
 
-val myDownloads by configurations.creating {
+val payloadPluginZip: Configuration by configurations.creating {
     isTransitive = false
     attributes {
         attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements::class.java, "plugin-zip"))
@@ -38,11 +38,11 @@ val myDownloads by configurations.creating {
 }
 
 dependencies {
-    myDownloads(project(":payload-plugin"))
+    payloadPluginZip(project(":payload-plugin"))
 }
 
 tasks.prepareSandbox {
     into(pluginName.map { "$it/resources/payloadPlugin" }) {
-        from(myDownloads)
+        from(payloadPluginZip)
     }
 }

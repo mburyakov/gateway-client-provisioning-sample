@@ -20,7 +20,7 @@ class ConfigurePluginsHook : ConfigureClientHook {
     ) {
         val thisPlugin = PluginManager.getPluginByClass(ConfigurePluginsHook::class.java)
         if (thisPlugin == null) {
-            log.error("Could not find location of current plugi.n")
+            log.error("Could not find location of current plugin.")
             return
         }
         val payloadDir = thisPlugin.pluginPath.resolve("resources/payloadPlugin").toFile()

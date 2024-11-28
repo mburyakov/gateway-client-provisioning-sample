@@ -1,2 +1,4 @@
-group = "com.jetbrains"
-version = "1.0-SNAPSHOT"
+allprojects {
+    group = "com.jetbrains"
+    version = "1.0-SNAPSHOT"
+}

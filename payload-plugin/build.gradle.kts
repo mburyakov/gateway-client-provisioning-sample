@@ -24,12 +24,13 @@ intellijPlatform {
         ideaVersion {
             sinceBuild = "243.21565"
         }
+        version = project.version.toString()
     }
     buildSearchableOptions = false
     instrumentCode = false
 }
 
-val pluginZip by configurations.creating {
+val pluginZip: Configuration by configurations.creating {
     isCanBeConsumed = true
     isCanBeResolved = false
 
@@ -39,5 +40,5 @@ val pluginZip by configurations.creating {
 }
 
 artifacts {
-    add("pluginZip", tasks.buildPlugin)
+    add(pluginZip.name, tasks.buildPlugin)
 }

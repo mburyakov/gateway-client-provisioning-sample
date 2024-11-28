@@ -3,7 +3,7 @@
 
     <name>Gateway Hook Sample</name>
 
-    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">JetBrains</vendor>
+    <vendor>ExampleCompany</vendor>
 
     <description>
         A simple plugin which install a payload plugin to the RD clients launched by JetBrains Gateway.
